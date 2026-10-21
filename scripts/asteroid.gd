@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 10000.0
-var direction: Vector2
+@export var direction: Vector2
 
 @onready var game: Node = $"../"
 
@@ -16,9 +16,6 @@ func _physics_process(delta: float) -> void:
 	velocity = SPEED * direction * delta
 	
 	move_and_slide()
-
-func reverse_direction() -> void:
-	direction.y *= -1
 
 func launch() -> void:
 	var angle = randf_range(-PI/4, PI/4)
