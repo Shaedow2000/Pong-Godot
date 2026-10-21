@@ -6,8 +6,8 @@
 script = ExtResource("1_r5nmk")
 
 [node name="PlayerAScore" type="Label" parent="." unique_id=2094867023]
-offset_right = 100.0
-offset_bottom = 40.0
+offset_right = 120.0
+offset_bottom = 60.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Score: 0"
@@ -18,8 +18,8 @@ vertical_alignment = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -100.0
-offset_bottom = 40.0
+offset_left = -120.0
+offset_bottom = 60.0
 grow_horizontal = 0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
