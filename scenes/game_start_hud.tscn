@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://5aa1urh883ee"]
 
+[ext_resource type="Script" uid="uid://bwdm05b7j0hra" path="res://scripts/game_start_hud.gd" id="1_ibsuf"]
+
 [node name="GameStartHUD" type="CanvasLayer" unique_id=1175983253]
+script = ExtResource("1_ibsuf")
 
 [node name="Start" type="Button" parent="." unique_id=2012748058]
 z_index = 10
@@ -17,3 +20,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 24
 text = "Start"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
