@@ -18,6 +18,7 @@ sources/0 = SubResource("TileSetAtlasSource_0wfyh")
 [node name="Main" type="Node" unique_id=1841946040]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=255974028]
+position = Vector2(289, 171)
 zoom = Vector2(2, 2)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=75898885]
