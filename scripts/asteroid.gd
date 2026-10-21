@@ -27,3 +27,7 @@ func launch() -> void:
 		direction *= -1
 	
 	velocity = SPEED * direction
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		direction *= -1

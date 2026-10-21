@@ -50,3 +50,4 @@ func _on_rigtht_body_entered(body: Node2D) -> void:
 	if body.is_in_group("asteroid") and start:
 		scored(0)
 		restart_game()
+		
