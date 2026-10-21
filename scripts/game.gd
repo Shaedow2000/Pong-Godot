@@ -4,6 +4,7 @@ extends Node
 @export var asteroid: CharacterBody2D
 @export var player_a: CharacterBody2D
 @export var player_b: CharacterBody2D
+@export var scores: CanvasLayer
 
 var camera
 var screen_size
@@ -16,11 +17,13 @@ var score_b: int = 0
 func _ready() -> void:
 	camera = get_viewport().get_camera_2d()
 	screen_size = get_viewport().get_visible_rect().size / camera.zoom
+	scores.hide()
 
 func start_game() -> void:
 	player_a.position = Vector2(20, screen_size.y / 2)
 	player_b.position = Vector2(screen_size.x - 20, screen_size.y / 2)
 	asteroid.position = camera.get_screen_center_position()
+	scores.show()
 	start = true
 	
 func restart_game() -> void:
@@ -30,8 +33,10 @@ func restart_game() -> void:
 func scored(player_id: int) -> void:
 	if player_id == 0:
 		score_a += 1
+		scores.increment_score(player_id, score_a)
 	else:
 		score_b += 1
+		scores.increment_score(player_id, score_b)
 
 func _on_left_body_entered(body: Node2D) -> void:
 	if body.is_in_group("asteroid") and start:
