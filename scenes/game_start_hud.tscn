@@ -21,4 +21,17 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 24
 text = "Start"
 
+[node name="Label" type="Label" parent="." unique_id=431666539]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -269.0
+offset_right = 269.0
+offset_bottom = 411.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 98
+text = "PONG HEHEHEHE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
