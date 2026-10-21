@@ -23,6 +23,9 @@ func start_game() -> void:
 	asteroid.position = camera.get_screen_center_position()
 	start = true
 	
+func restart_game() -> void:
+	asteroid.position = camera.get_screen_center_position()
+	
 func scored(player_id: int) -> void:
 	if player_id == 0:
 		score_a += 1
@@ -40,9 +43,9 @@ func _on_bottom_body_entered(body: Node2D) -> void:
 func _on_left_body_entered(body: Node2D) -> void:
 	if body.is_in_group("asteroid") and start:
 		scored(1)
-		print("SCORE A: ", score_a, " SCORE B: ", score_b)
+		restart_game()
 
 func _on_rigtht_body_entered(body: Node2D) -> void:
 	if body.is_in_group("asteroid") and start:
 		scored(0)
-		print("SCORE A: ", score_a, " SCORE B: ", score_b)
+		restart_game()
