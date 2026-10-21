@@ -17,14 +17,11 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	direction.y *= -1
-
 func reverse_direction() -> void:
 	direction.y *= -1
 
 func launch() -> void:
-	var angle = randf_range(-1.396263, 1.396263)
+	var angle = randf_range(-PI/4, PI/4)
 	direction = Vector2.RIGHT.rotated(angle)
 	if randf() < 0.5:
 		direction *= -1
