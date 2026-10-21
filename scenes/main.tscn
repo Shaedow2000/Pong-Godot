@@ -24,6 +24,13 @@ distance = 2.0
 normal = Vector2(0, 1)
 distance = -2.0
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qs8gw"]
+normal = Vector2(-1, 0)
+distance = 85.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cv054"]
+normal = Vector2(1, 0)
+
 [node name="Main" type="Node" unique_id=1841946040]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=255974028]
@@ -54,5 +61,20 @@ position = Vector2(281, 9)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom" unique_id=916488613]
 shape = SubResource("WorldBoundaryShape2D_c044d")
 
+[node name="Left" type="Area2D" parent="Borders" unique_id=1731619176]
+position = Vector2(663, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Left" unique_id=1119671756]
+shape = SubResource("WorldBoundaryShape2D_qs8gw")
+
+[node name="Rigtht" type="Area2D" parent="Borders" unique_id=1118330875]
+position = Vector2(-153, 295)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Rigtht" unique_id=1470145559]
+position = Vector2(153, -7)
+shape = SubResource("WorldBoundaryShape2D_cv054")
+
 [connection signal="body_entered" from="Borders/Top" to="Game" method="_on_top_body_entered"]
 [connection signal="body_entered" from="Borders/Bottom" to="Game" method="_on_bottom_body_entered"]
+[connection signal="body_entered" from="Borders/Left" to="Game" method="_on_left_body_entered"]
+[connection signal="body_entered" from="Borders/Rigtht" to="Game" method="_on_rigtht_body_entered"]
