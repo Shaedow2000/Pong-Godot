@@ -22,8 +22,15 @@ sources/0 = SubResource("TileSetAtlasSource_0wfyh")
 normal = Vector2(0, 1)
 distance = -3.0
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_saui8"]
+normal = Vector2(0, 1)
+distance = 8.0
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c044d"]
 distance = -2.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rgvmj"]
+distance = 43.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qs8gw"]
 normal = Vector2(1, 0)
@@ -58,12 +65,22 @@ position = Vector2(291, -1)
 position = Vector2(-3, 11)
 shape = SubResource("WorldBoundaryShape2D_irq48")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders/Top" unique_id=1009060594]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Top/StaticBody2D" unique_id=1542525391]
+shape = SubResource("WorldBoundaryShape2D_saui8")
+
 [node name="Bottom" type="Area2D" parent="Borders" unique_id=649125084]
 position = Vector2(289, 378)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom" unique_id=916488613]
 position = Vector2(-9, -45)
 shape = SubResource("WorldBoundaryShape2D_c044d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders/Bottom" unique_id=1647562702]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom/StaticBody2D" unique_id=1855771169]
+shape = SubResource("WorldBoundaryShape2D_rgvmj")
 
 [node name="Left" type="Area2D" parent="Borders" unique_id=1731619176]
 position = Vector2(-4, 192)
