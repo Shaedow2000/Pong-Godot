@@ -19,6 +19,13 @@ func _ready() -> void:
 	screen_size = get_viewport().get_visible_rect().size / camera.zoom
 	scores.hide()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("start_game"):
+		start_game()
+	
+	if event.is_action_pressed("back_to_main_menu"):
+		exit_game()
+
 func start_game() -> void:
 	player_a.position = Vector2(20, screen_size.y / 2)
 	player_b.position = Vector2(screen_size.x - 20, screen_size.y / 2)
@@ -29,6 +36,9 @@ func start_game() -> void:
 func restart_game() -> void:
 	asteroid.position = camera.get_screen_center_position()
 	asteroid.launch()
+	
+func exit_game() -> void:
+	get_tree().reload_current_scene()
 	
 func scored(player_id: int) -> void:
 	if player_id == 0:
