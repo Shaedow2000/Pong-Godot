@@ -21,6 +21,7 @@ animations = [{
 size = Vector2(3, 16)
 
 [node name="PlayerB" type="CharacterBody2D" unique_id=1337250693]
+scale = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1347791817]
 sprite_frames = SubResource("SpriteFrames_irq48")
