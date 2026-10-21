@@ -19,3 +19,12 @@ func start_game() -> void:
 	player_b.position = Vector2(screen_size.x - 20, screen_size.y / 2)
 	asteroid.position = camera.get_screen_center_position()
 	start = true
+
+
+func _on_top_body_entered(body: Node2D) -> void:
+	if body.is_in_group("asteroid"):
+		body.call("reverse_direction")
+
+func _on_bottom_body_entered(body: Node2D) -> void:
+	if body.is_in_group("asteroid"):
+		body.call("reverse_direction")
