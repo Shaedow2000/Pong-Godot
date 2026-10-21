@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://brnm30fo4a0ld"]
 
 [ext_resource type="Texture2D" uid="uid://l4y43ya7xmrn" path="res://assets/sprites.png" id="1_aapw3"]
+[ext_resource type="Script" uid="uid://b7vwqfob46nmv" path="res://scripts/player_b.gd" id="1_jusuf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aapw3"]
 atlas = ExtResource("1_aapw3")
@@ -22,6 +23,7 @@ size = Vector2(3, 16)
 
 [node name="PlayerB" type="CharacterBody2D" unique_id=1337250693]
 scale = Vector2(2, 2)
+script = ExtResource("1_jusuf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1347791817]
 sprite_frames = SubResource("SpriteFrames_irq48")
