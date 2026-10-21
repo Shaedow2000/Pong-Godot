@@ -30,7 +30,7 @@ distance = 8.0
 distance = -2.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rgvmj"]
-distance = 43.0
+distance = 38.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qs8gw"]
 normal = Vector2(1, 0)
@@ -68,6 +68,7 @@ shape = SubResource("WorldBoundaryShape2D_irq48")
 [node name="StaticBody2D" type="StaticBody2D" parent="Borders/Top" unique_id=1009060594]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Top/StaticBody2D" unique_id=1542525391]
+position = Vector2(-4, -7)
 shape = SubResource("WorldBoundaryShape2D_saui8")
 
 [node name="Bottom" type="Area2D" parent="Borders" unique_id=649125084]
