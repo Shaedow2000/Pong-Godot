@@ -25,6 +25,7 @@ func start_game() -> void:
 	
 func restart_game() -> void:
 	asteroid.position = camera.get_screen_center_position()
+	asteroid.launch()
 	
 func scored(player_id: int) -> void:
 	if player_id == 0:
