@@ -33,14 +33,6 @@ func scored(player_id: int) -> void:
 	else:
 		score_b += 1
 
-func _on_top_body_entered(body: Node2D) -> void:
-	if body.is_in_group("asteroid"):
-		body.call("reverse_direction")
-
-func _on_bottom_body_entered(body: Node2D) -> void:
-	if body.is_in_group("asteroid"):
-		body.call("reverse_direction")
-
 func _on_left_body_entered(body: Node2D) -> void:
 	if body.is_in_group("asteroid") and start:
 		scored(1)
@@ -50,4 +42,11 @@ func _on_rigtht_body_entered(body: Node2D) -> void:
 	if body.is_in_group("asteroid") and start:
 		scored(0)
 		restart_game()
-		
+
+func _on_bottom_body_entered(body: Node2D) -> void:
+	if body.is_in_group("asteroid"):
+		asteroid.direction.y *= -1
+
+func _on_top_body_entered(body: Node2D) -> void:
+	if body.is_in_group("asteroid"):
+		asteroid.direction.y *= -1
