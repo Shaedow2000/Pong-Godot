@@ -17,6 +17,13 @@ texture = ExtResource("1_o5qli")
 [sub_resource type="TileSet" id="TileSet_sugp2"]
 sources/0 = SubResource("TileSetAtlasSource_0wfyh")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_irq48"]
+distance = 2.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c044d"]
+normal = Vector2(0, 1)
+distance = -2.0
+
 [node name="Main" type="Node" unique_id=1841946040]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=255974028]
@@ -31,3 +38,21 @@ tile_set = SubResource("TileSet_sugp2")
 
 [node name="GameStartHUD" parent="." unique_id=1175983253 node_paths=PackedStringArray("game") instance=ExtResource("3_sugp2")]
 game = NodePath("../Game")
+
+[node name="Borders" type="Node2D" parent="." unique_id=976991294]
+
+[node name="Top" type="Area2D" parent="Borders" unique_id=1894544033]
+position = Vector2(289, 334)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Top" unique_id=2060646739]
+position = Vector2(0, 2)
+shape = SubResource("WorldBoundaryShape2D_irq48")
+
+[node name="Bottom" type="Area2D" parent="Borders" unique_id=1904140224]
+position = Vector2(281, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom" unique_id=916488613]
+shape = SubResource("WorldBoundaryShape2D_c044d")
+
+[connection signal="body_entered" from="Borders/Top" to="Game" method="_on_top_body_entered"]
+[connection signal="body_entered" from="Borders/Bottom" to="Game" method="_on_bottom_body_entered"]
