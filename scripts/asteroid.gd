@@ -27,4 +27,10 @@ func launch() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		direction *= -1
+		direction.x *= -1
+		
+		if body.velocity.y < 0 and velocity.y > 0:
+			direction.y *= -1
+		
+		if body.velocity.y > 0 and velocity.y < 0:
+			direction.y *= -1
