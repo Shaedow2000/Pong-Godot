@@ -18,10 +18,10 @@ texture = ExtResource("1_o5qli")
 sources/0 = SubResource("TileSetAtlasSource_0wfyh")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_irq48"]
-distance = 2.0
+normal = Vector2(0, 1)
+distance = -3.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c044d"]
-normal = Vector2(0, 1)
 distance = -2.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qs8gw"]
@@ -48,17 +48,18 @@ game = NodePath("../Game")
 
 [node name="Borders" type="Node2D" parent="." unique_id=976991294]
 
-[node name="Top" type="Area2D" parent="Borders" unique_id=1894544033]
-position = Vector2(289, 334)
+[node name="Top" type="Area2D" parent="Borders" unique_id=321533890]
+position = Vector2(291, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Top" unique_id=2060646739]
-position = Vector2(0, 2)
+position = Vector2(-3, 11)
 shape = SubResource("WorldBoundaryShape2D_irq48")
 
-[node name="Bottom" type="Area2D" parent="Borders" unique_id=1904140224]
-position = Vector2(281, 9)
+[node name="Bottom" type="Area2D" parent="Borders" unique_id=649125084]
+position = Vector2(289, 378)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom" unique_id=916488613]
+position = Vector2(-9, -45)
 shape = SubResource("WorldBoundaryShape2D_c044d")
 
 [node name="Left" type="Area2D" parent="Borders" unique_id=1731619176]
